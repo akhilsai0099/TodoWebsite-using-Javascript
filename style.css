@@ -14,16 +14,13 @@ body{
 }
 .todo-container{
     display: block;
-    width: 65%;
-    margin: auto;
     align-items: center;
 }
 
 .todo-container .todo-header{
     height: 6rem;
     display: flex;
-    margin-top: 3%;
-    border-radius: 20px 20px 0px 0px;
+    /* border-radius: 20px 20px 0px 0px; */
     justify-content: space-between;
     min-height: 50vh;
     align-items: center;
@@ -52,13 +49,12 @@ input[type=text]{
 input[type=text]:focus{
     background-color: var(--bgColor);
     outline: none;
-    height: 4rem;
-    font-size: 2rem;
     box-shadow: 0px 0px 10px 5px rgb(211, 208, 208);
 
 }
 input::placeholder{
     color: rgb(189, 186, 186);
+    text-align: center;
 }
 
 .todo-add{
@@ -81,11 +77,9 @@ input::placeholder{
     /* background-color: green; */
     box-shadow: 0px 0px 10px 5px rgb(211, 208, 208);
     color:white;
-    height: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
     cursor: pointer;
 }
 
@@ -105,11 +99,7 @@ input::placeholder{
     /* padding-top: 3rem; */
     color:white;
     padding: 3rem 2rem 1rem 2rem;
-    max-width: inherit;
-    min-height: 100%;
-    top: 40%;
-    width: inherit;
-    height: fit-content;
+    min-height: 60vh;
 }
 
 .todo-body .card{
@@ -118,4 +108,60 @@ input::placeholder{
     justify-content: space-between;
     min-height: 4rem;
     align-items: center;
+}
+
+
+@media only screen and (min-width: 900px) {
+    .todo-container{
+        width: 65%;
+        margin: auto;
+    }
+    .todo-body{
+        width: inherit;
+    }
+
+    input[type=text]:focus{
+        height: 4rem;
+        font-size: 2rem;    
+    }
+
+    .todo-add:hover{
+        /* background-color: green; */
+        height: 4rem;
+        font-size: 1rem;
+    }
+
+    .todo-container .todo-header{
+        margin-top: 3vh;
+    }
+
+    .todo-container .todo-header{
+
+        border-radius: 20px 20px 0px 0px;
+
+    }
+
+    .todo-body{
+        position: absolute;
+        /* padding-top: 3rem; */
+       
+        top: 40vh;
+       
+        /* height: fit-content; */
+    }
+  }
+  
+
+@media only screen and (max-width: 900px) {
+  .todo-body{
+      position: absolute;     
+      top: 37vh;  
+      min-height: 63vh;
+      width: 100%;
+  }
+
+  input[type=text]:focus{
+    height: 3.5rem;
+    font-size: 1.5rem;    
+    }
 }
