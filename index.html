@@ -5,30 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
     <title>Todo List</title>
 </head>
 <body>
     <div class="todo-container">
-        <div class="todo-header">
-            <input type="text" placeholder="Enter your note" autocomplete="off" id="note" class="Todo-Input">
-            <button id="save" class="todo-add">Add</button>        
+        <div>
+            <center><h2 style="color:white;position:absolute;top:10%;left:45% ">Todo-List</h2></center>
+            <div class="todo-header">
+                <form >
+                    <input type="text" placeholder="Enter your note" autocomplete="off" id="note" class="Todo-Input">
+                    <button type="submit">&plus;</button>     
+                </form>
+            </div>
         </div>
         
-        <div class="todo-body">
-            <div class="card">
-                <input type="text" placeholder="Your Note 1" autocomplete="off" id="note" class="Todo-Input">
-                <div class="actionbtn">
-                    <button id="save" class="todo-add wd3">!</button>  
-                    <button id="save" class="todo-add danger wd3">X</button>  
-                </div>
-            </div>
-            <div class="card">
-                <input type="text" placeholder="Your Note 1" autocomplete="off" id="note" class="Todo-Input">
-                <div class="actionbtn">
-                    <button id="save" class="todo-add wd3">!</button>  
-                    <button id="save" class="todo-add danger wd3">X</button>  
-                </div>
-            </div>
+        <div class="todo-body" id="todo-list">
+            <ul >
+                <li>
+                    <input type="checkbox" onclick="taskComplete(this)" class="check">
+                    <input type="text" value="Exercise" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+                    <i class="fa fa-trash" onclick="removeTask(this)"></i>
+                  </li>
+            </ul>
+            
         </div>
     </div>
     <script src="script.js"></script>
