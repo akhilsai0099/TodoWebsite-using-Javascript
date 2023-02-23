@@ -1,11 +1,7 @@
-let obj = {
-  name: 12,
-  age: 12,
-};
-let arr = [{ "tasks": "" }];
-let st = JSON.stringify(arr);
-let pt = JSON.stringify([...JSON.parse(st || "[]"), { "name": "12","age":122 }]);
-let taskss = Array.from(JSON.parse(pt));
-taskss.forEach((task) => {
-  console.log(task);
-});
+let a = JSON.stringify("oeuaoueu","thosue")
+let arr = [{task:"hello",completed:false},{
+  task:"hii",completed:false
+}]
+let b = JSON.stringify([...arr,{task:"hey",completed:false}])
+let parsed = JSON.parse(b)
+console.log(parsed)
