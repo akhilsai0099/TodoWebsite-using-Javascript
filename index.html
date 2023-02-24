@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,29 +10,28 @@
 
     <title>Todo List</title>
 </head>
+
 <body>
     <div class="todo-container">
         <div>
-            <center><h2 style="color:white;position:absolute;top:10%;left:45% ">Todo-List</h2></center>
+            <center>
+                <h2 style="color:white;position:absolute;top:10%;left:45% ">Todo-List</h2>
+            </center>
             <div class="todo-header">
-                <form >
+                <form>
                     <input type="text" placeholder="Enter your note" autocomplete="off" id="note" class="Todo-Input">
-                    <button type="submit">&plus;</button>     
+                    <button type="submit">&plus;</button>
                 </form>
             </div>
         </div>
-        
+
         <div class="todo-body" id="todo-list">
-            <ul >
-                <li>
-                    <input type="checkbox" onclick="taskComplete(this)" class="check">
-                    <input type="text" value="Exercise" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-                    <i class="fa fa-trash" onclick="removeTask(this)"></i>
-                  </li>
+            <ul>
             </ul>
-            
+
         </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>

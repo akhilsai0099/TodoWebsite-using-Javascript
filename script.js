@@ -13,7 +13,7 @@ window.onload = loadTasks;
         const list = document.querySelector("ul");
         const li = document.createElement("li");
         li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
-              <input type="text" value="${task.task}" class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+              <input type="text" value="${task.task}" class="task ${task.completed ? 'complete' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
               <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
         list.insertBefore(li, list.children[0]);
       });
@@ -36,8 +36,8 @@ window.onload = loadTasks;
       localStorage.setItem("tasks",JSON.stringify([...JSON.parse(localStorage.getItem("tasks") || "[]"),{task:task.value,completed:false}]));
 
       const li = document.createElement("li");
-      li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check">
-      <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+      li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check ${task.completed ? 'checked' : ''}">
+      <input type="text" value="${task.value}" class="task ${task.completed ? 'complete' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
       <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
       list.insertBefore(li, list.children[0]);
       task.value = "";
